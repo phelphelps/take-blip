@@ -1,0 +1,33 @@
+<div class="main-container">
+  <div class="search-container">
+    <h1>My chatbots</h1>
+  </div>
+  <div>
+    <h1>Favorities</h1>
+    <div [ngClass]="{ 'horizontal-list': true, 'vertical-list': false }">
+      <ng-container *ngFor="let bot of favoriteBots">
+        <app-square-bot-card
+          [botImage]="bot.image"
+          [botName]="bot.name"
+          [botTemplate]="bot.template"
+          [isFavorite]="bot.favorite!"
+          (toggleFavoriteEvent)="toggleFavorite($event, bot)"
+        ></app-square-bot-card>
+      </ng-container>
+    </div>
+
+    <hr *ngIf="favoriteBots.length" class="list-separator" />
+
+    <div [ngClass]="{ 'horizontal-list': true, 'vertical-list': false }">
+      <ng-container *ngFor="let bot of notFavoriteBots">
+        <app-square-bot-card
+          [botImage]="bot.image"
+          [botName]="bot.name"
+          [botTemplate]="bot.template"
+          [isFavorite]="bot.favorite!"
+          (toggleFavoriteEvent)="toggleFavorite($event, bot)"
+        ></app-square-bot-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

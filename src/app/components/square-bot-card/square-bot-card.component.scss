@@ -1,0 +1,44 @@
+@import "../../../colors.scss";
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 280px;
+  height: 300px;
+  border-radius: 8px;
+  margin: 24px;
+  background-color: $surface;
+
+  .star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 24px;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .bot-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+  }
+  .bot-name {
+    font-size: 24px;
+    margin: 10px;
+    color: $primary;
+  }
+
+  .bot-template {
+    font-size: 18px;
+    color: $grey;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="main-container">
+  <div class="card-container">
+    <div class="star-container" (click)="toggleFavorite()">
+      <ng-container *ngIf="isFavorite; else notFavoriteIconTemplate">
+        <img src="../../../assets/images/star.png" />
+      </ng-container>
+    </div>
+    <img class="bot-avatar" [src]="botImage" />
+    <span class="bot-name">{{ botName }}</span>
+    <span class="bot-template">{{ botTemplate }}</span>
+  </div>
+</div>
+
+<!--templates-->
+
+<ng-template #notFavoriteIconTemplate>
+  <img src="../../../assets/images/favorite.png" />
+</ng-template>
