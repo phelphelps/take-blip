@@ -8,7 +8,6 @@ export class GetGmtPipe implements PipeTransform {
   transform(date: string): string {
     const gmtValue = moment(date).format('Z');
     const gmtList = GMT_CITIES;
-    console.log(gmtValue, gmtList[gmtValue])
     return gmtList[gmtValue];
   }
 }
