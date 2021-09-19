@@ -1,0 +1,52 @@
+.main-container {
+  height: calc(100vh - 80px);
+
+  .bot-info-container {
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+
+    .grid-container {
+      display: grid;
+      width: 80%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      grid-template-areas: 'region activeUser activeUser'
+                            'receivedMessage receivedMessage sentMessage';
+    }
+
+    .region-container {
+      grid-area: region;
+    }
+
+    .active-users-item {
+      grid-area: activeUser;
+    }
+    .received-messages-item {
+      grid-area: receivedMessage;
+    }
+    .sent-messages-item {
+      grid-area: sentMessage;
+    }
+
+    .plan-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .plan-status-title {
+
+    }
+
+    .plan-status-description {
+
+    }
+  }
+
+
+}
+
+

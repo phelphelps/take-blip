@@ -11,6 +11,7 @@ import { CreatedAtPipe } from './shared/pipes/created-at.pipe';
 import { FlatButtonComponent } from './components/flat-button/flat-button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BotDetailsComponent } from './pages/bot-details/bot-details.component';
+import { DashboardItemComponent } from './components/dashboard-item/dashboard-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BotDetailsComponent } from './pages/bot-details/bot-details.component';
     ListManagerComponent,
     CreatedAtPipe,
     FlatButtonComponent,
-    BotDetailsComponent
+    BotDetailsComponent,
+    DashboardItemComponent
   ],
   imports: [
     BrowserModule,
