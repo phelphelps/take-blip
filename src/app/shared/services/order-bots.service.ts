@@ -25,7 +25,7 @@ export class OrderBotsService {
     return this.botOrderBehavior.asObservable();
   }
 
-  order(botArray: BotInterface[]) {
+  order(botArray: BotInterface[]): BotInterface[] {
     switch(this.currentOrderMode) {
       case this.byName:
         return botArray.sort((firstValue, secondValue) => this.compareValues(firstValue, secondValue, this.byName));
@@ -33,11 +33,10 @@ export class OrderBotsService {
         return botArray.sort((firstValue, secondValue) => this.compareValues(firstValue, secondValue, this.byCreation));
       default:
         return botArray
-
     }
   }
 
-  compareValues(firstValue: any, secondValue: any, attribute: string) {
+  compareValues(firstValue: any, secondValue: any, attribute: string): number {
     if ( firstValue[attribute] < secondValue[attribute] ){
       return -1;
     }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { BLOCKS_VIEW, LIST_VIEW } from '../constants/layout';
 import { BotInterface } from '../interfaces/bot.interface';
 import { BotLoaderService } from './bot-loader.service';
 import { OrderBotsService } from './order-bots.service';
