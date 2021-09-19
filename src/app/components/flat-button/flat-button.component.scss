@@ -1,0 +1,17 @@
+@import '../../../colors.scss';
+
+.accent-button {
+  background-color: $accent;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  height: 40px;
+  box-sizing: border-box;
+  margin: 0 8px;
+
+  &:hover {
+    background-color: rgba($color: $accent, $alpha: 0.8);
+  }
+}
