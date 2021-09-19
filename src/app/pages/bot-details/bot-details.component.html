@@ -1,17 +1,50 @@
 <div class="main-container">
   <div class="bot-info-container">
-    <div class="grid-container">
-      <app-dashboard-item class="region-container"></app-dashboard-item>
-      <app-dashboard-item class="active-users-item"></app-dashboard-item>
-      <app-dashboard-item class="received-messages-item"></app-dashboard-item>
-      <app-dashboard-item class="sent-messages-item"></app-dashboard-item>
+    <div class="bot-basic-info">
+      <div class="blip-icon">
+        <img src="assets/images/blip.png">
+      </div>
+      <div class="bot-identifiers">
+        <span class="bot-name">{{ botInfo.name }}</span>
+        <span class="bot-id">id: {{ botInfo.shortName }}</span>
+      </div>
     </div>
+    <span class="created-at">{{ botInfo.created | createdAt }}</span>
+  </div>
+  <hr class="separator">
+  <div class="bot-analytics-container">
+
+    <div class="grid-container">
+      <div class="region-container">
+        <span class="label">{{ BOT_REGION.regionLabel }}</span>
+        <span class="description">{{ botInfo.culture | getLanguage}}</span>
+        <span class="label">{{ BOT_REGION.timezoneLabel }}</span>
+        <span class="description">{{ botInfo.updated | getGMT }}</span>
+      </div>
+
+      <app-dashboard-item class="active-users-item" [quantity]="activeUsers.actived"
+      [description]="ACTIVE_USERS.description" [color]="ACTIVE_USERS.iconColor"
+      [icon]="ACTIVE_USERS.icon"></app-dashboard-item>
+
+      <app-dashboard-item class="received-messages-item" [quantity]="botMessages.received"
+      [description]="RECEIVED_MESSAGES.description" [color]="RECEIVED_MESSAGES.iconColor"
+      [icon]="RECEIVED_MESSAGES.icon"></app-dashboard-item>
+
+      <app-dashboard-item class="sent-messages-item" [quantity]="botMessages.sent"
+      [description]="SENT_MESSAGES.description" [color]="SENT_MESSAGES.iconColor"
+      [icon]="SENT_MESSAGES.icon"></app-dashboard-item>
+    </div>
+
     <div class="plan-info">
-      <img src="../../../assets/images/plano.png">
+      <img src="assets/images/plano.png" class="plan-image">
       <span class="plan-status-title">Status account</span>
       <span class="plan-status-description">Free</span>
       <app-flat-button buttonText="Upgrade account"></app-flat-button>
     </div>
   </div>
-
+  <hr class="separator">
+  <div class="mini-footer">
+    <span class="site-info">©2019, BLiP Todos os direitos reservados | </span>
+    <span class="terms">Termos de Uso</span>
+  </div>
 </div>

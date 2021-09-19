@@ -9,16 +9,16 @@
       </div>
       <div class="horizontal-bot-list">
         <ng-container *ngFor="let bot of favoriteBots">
-          <app-square-bot-card [botImage]="bot.image" [botName]="bot.name" [botTemplate]="bot.template"
-            [isFavorite]="bot.favorite!" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+          <app-square-bot-card [botImage]="bot.image" [botName]="bot.name" [botTemplate]="bot.plan"
+            [isFavorite]="bot.favorite!" (toggleFavoriteEvent)="toggleFavorite($event, bot)" (itemPressed)="openDetails(bot)">
           </app-square-bot-card>
         </ng-container>
       </div>
       <hr *ngIf="favoriteBots.length" class="list-separator" />
       <div class="horizontal-bot-list">
         <ng-container *ngFor="let bot of notFavoriteBots">
-          <app-square-bot-card [botImage]="bot.image" [botName]="bot.name" [botTemplate]="bot.template"
-            [isFavorite]="bot.favorite!" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+          <app-square-bot-card [botImage]="bot.image" [botName]="bot.name" [botTemplate]="bot.plan"
+            [isFavorite]="bot.favorite!" (toggleFavoriteEvent)="toggleFavorite($event, bot)" (itemPressed)="openDetails(bot)">
           </app-square-bot-card>
         </ng-container>
       </div>
@@ -30,14 +30,14 @@
         <p class="favorites-title">Favorites</p>
       </div>
       <ng-container *ngFor="let bot of favoriteBots">
-        <app-wide-bot-card [botImage]="bot.image" [botName]="bot.name"
-          [isFavorite]="bot.favorite!" [botCreatedDate]="bot.created" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+        <app-wide-bot-card [botImage]="bot.image" [botName]="bot.name" [isFavorite]="bot.favorite!"
+        [botCreatedDate]="bot.created" (toggleFavoriteEvent)="toggleFavorite($event, bot)" (itemPressed)="openDetails(bot)">
         </app-wide-bot-card>
       </ng-container>
       <hr *ngIf="favoriteBots.length" class="list-separator" />
       <ng-container *ngFor="let bot of notFavoriteBots">
-        <app-wide-bot-card [botImage]="bot.image" [botName]="bot.name"
-          [isFavorite]="bot.favorite!" [botCreatedDate]="bot.created" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+        <app-wide-bot-card [botImage]="bot.image" [botName]="bot.name" [isFavorite]="bot.favorite!"
+        [botCreatedDate]="bot.created" (toggleFavoriteEvent)="toggleFavorite($event, bot)" (itemPressed)="openDetails(bot)">
         </app-wide-bot-card>
       </ng-container>
     </div>

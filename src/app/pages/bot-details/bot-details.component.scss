@@ -1,7 +1,8 @@
-.main-container {
-  height: calc(100vh - 80px);
+@import '../../../colors.scss';
 
-  .bot-info-container {
+.main-container {
+
+  .bot-analytics-container {
     display: flex;
     flex-direction: row;
     height: 60%;
@@ -14,20 +15,37 @@
       gap: 20px;
       grid-template-areas: 'region activeUser activeUser'
                             'receivedMessage receivedMessage sentMessage';
-    }
 
-    .region-container {
-      grid-area: region;
-    }
+      .active-users-item {
+        grid-area: activeUser;
+      }
 
-    .active-users-item {
-      grid-area: activeUser;
-    }
-    .received-messages-item {
-      grid-area: receivedMessage;
-    }
-    .sent-messages-item {
-      grid-area: sentMessage;
+      .received-messages-item {
+        grid-area: receivedMessage;
+      }
+
+      .sent-messages-item {
+        grid-area: sentMessage;
+      }
+
+      .region-container {
+        grid-area: region;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $surface;
+        border-radius: 8px;
+        box-shadow: 2px 2px 16px rgba($color: $grey, $alpha: 0.4);
+
+        .label {
+          font-weight: bold;
+          margin: 8px 8px 8px 30px;
+        }
+
+        .description {
+          margin: 8px 8px 8px 30px;
+        }
+      }
     }
 
     .plan-info {
@@ -35,18 +53,87 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 20%;
     }
 
     .plan-status-title {
-
+      color: $light-blue;
+      margin: 10px;
     }
 
     .plan-status-description {
+      margin: 10px;
+      font-weight: bold;
+      font-size: 22px;
+    }
 
+    .plan-image {
+      width: 90%;
+      height: auto;
     }
   }
 
+  .separator {
+    border: 1px solid rgba($color: $grey, $alpha: 0.2);
+    margin: 40px 0;
 
+  }
+
+  .bot-info-container {
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .created-at {
+      color: $grey;
+    }
+
+    .blip-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      background-color: $light-grey;
+      border-radius: 50%;
+    }
+
+    .bot-basic-info {
+      display: flex;
+      flex-direction: row;
+
+      .bot-identifiers {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bot-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 4px 8px;
+      }
+
+      .bot-id {
+        margin: 2px 8px;
+        color: $grey;
+      }
+    }
+  }
+
+  .mini-footer {
+    padding: 10px;
+    text-align: center;
+
+    .site-info {
+      color: $grey;
+    }
+
+    .terms {
+      color: $dark-blue;
+      font-weight: bold;
+    }
+  }
 }
 
 
