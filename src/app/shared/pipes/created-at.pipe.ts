@@ -3,8 +3,8 @@ import moment from 'moment';
 
 @Pipe({name: 'createdAt'})
 export class CreatedAtPipe implements PipeTransform {
-  transform(value: any): any {
-    const fullDate = moment(value).format('DD/MM/YYYY')
+  transform(date: string): string {
+    const fullDate = moment(date).format('DD/MM/YYYY');
     return `Created at ${fullDate}`
   }
 }

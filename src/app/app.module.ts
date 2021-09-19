@@ -12,6 +12,8 @@ import { FlatButtonComponent } from './components/flat-button/flat-button.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { BotDetailsComponent } from './pages/bot-details/bot-details.component';
 import { DashboardItemComponent } from './components/dashboard-item/dashboard-item.component';
+import { GetGmtPipe } from './shared/pipes/get-gmt.pipe';
+import { GetLanguagePipe } from './shared/pipes/get-language.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DashboardItemComponent } from './components/dashboard-item/dashboard-it
     CreatedAtPipe,
     FlatButtonComponent,
     BotDetailsComponent,
-    DashboardItemComponent
+    DashboardItemComponent,
+    GetGmtPipe,
+    GetLanguagePipe
   ],
   imports: [
     BrowserModule,
