@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailsGuard } from './guards/details.guard';
 import { BotDetailsComponent } from './pages/bot-details/bot-details.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'details', component: BotDetailsComponent }
+  { path: 'details', component: BotDetailsComponent, canActivate: [DetailsGuard] }
 ];
 
 @NgModule({
