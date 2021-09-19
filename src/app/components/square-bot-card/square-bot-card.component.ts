@@ -23,13 +23,6 @@ export class SquareBotCardComponent implements OnInit {
   }
 
   toggleFavorite() {
-    console.log(
-      'thuis fav',
-      this.isFavorite,
-      this.botName,
-      this.botTemplate,
-      this.botImage
-    );
     this.toggleFavoriteEvent.emit({
       isFavorite: this.isFavorite ? false : true,
     });

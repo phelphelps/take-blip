@@ -1,32 +1,44 @@
 <div class="main-container">
-  <div class="search-container">
-    <h1>My chatbots</h1>
-  </div>
-  <div>
-    <h1>Favorities</h1>
-    <div [ngClass]="{ 'horizontal-list': true, 'vertical-list': false }">
-      <ng-container *ngFor="let bot of favoriteBots">
-        <app-square-bot-card
-          [botImage]="bot.image"
-          [botName]="bot.name"
-          [botTemplate]="bot.template"
-          [isFavorite]="bot.favorite!"
-          (toggleFavoriteEvent)="toggleFavorite($event, bot)"
-        ></app-square-bot-card>
-      </ng-container>
+  <app-list-manager (layoutModeChange)="changeLayout($event)"></app-list-manager>
+  <div [ngSwitch]="layoutMode">
+
+    <!--layout mode: blocks-->
+    <div *ngSwitchCase="blockMode">
+      <div *ngIf="favoriteBots.length">
+        <p class="favorites-title">Favorites</p>
+      </div>
+      <div class="horizontal-bot-list">
+        <ng-container *ngFor="let bot of favoriteBots">
+          <app-square-bot-card [botImage]="bot.image" [botName]="bot.name" [botTemplate]="bot.template"
+            [isFavorite]="bot.favorite!" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+          </app-square-bot-card>
+        </ng-container>
+      </div>
+      <hr *ngIf="favoriteBots.length" class="list-separator" />
+      <div class="horizontal-bot-list">
+        <ng-container *ngFor="let bot of notFavoriteBots">
+          <app-square-bot-card [botImage]="bot.image" [botName]="bot.name" [botTemplate]="bot.template"
+            [isFavorite]="bot.favorite!" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+          </app-square-bot-card>
+        </ng-container>
+      </div>
     </div>
+    <div *ngSwitchCase="listMode">
 
-    <hr *ngIf="favoriteBots.length" class="list-separator" />
-
-    <div [ngClass]="{ 'horizontal-list': true, 'vertical-list': false }">
+      <!--layout mode: list-->
+      <div *ngIf="favoriteBots.length">
+        <p class="favorites-title">Favorites</p>
+      </div>
+      <ng-container *ngFor="let bot of favoriteBots">
+        <app-wide-bot-card [botImage]="bot.image" [botName]="bot.name"
+          [isFavorite]="bot.favorite!" [botCreatedDate]="bot.created" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+        </app-wide-bot-card>
+      </ng-container>
+      <hr *ngIf="favoriteBots.length" class="list-separator" />
       <ng-container *ngFor="let bot of notFavoriteBots">
-        <app-square-bot-card
-          [botImage]="bot.image"
-          [botName]="bot.name"
-          [botTemplate]="bot.template"
-          [isFavorite]="bot.favorite!"
-          (toggleFavoriteEvent)="toggleFavorite($event, bot)"
-        ></app-square-bot-card>
+        <app-wide-bot-card [botImage]="bot.image" [botName]="bot.name"
+          [isFavorite]="bot.favorite!" [botCreatedDate]="bot.created" (toggleFavoriteEvent)="toggleFavorite($event, bot)">
+        </app-wide-bot-card>
       </ng-container>
     </div>
   </div>

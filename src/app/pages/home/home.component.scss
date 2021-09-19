@@ -1,12 +1,8 @@
 @import "../../../colors.scss";
 
 .main-container {
-  background: $background;
 
-  .vertical-list {
-  }
-
-  .horizontal-list {
+  .horizontal-bot-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,5 +10,10 @@
 
   .list-separator {
     border: 1px solid rgba($color: $grey, $alpha: 0.2);
+    margin: 40px 0;
+  }
+
+  .favorites-title {
+    font-size: 30px;
   }
 }

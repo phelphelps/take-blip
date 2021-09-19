@@ -1,0 +1,21 @@
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .actions-container {
+    display: flex;
+    align-items: center;
+
+    .search-bar {
+      margin: 0 20px;
+    }
+
+    .layout-button {
+      height: 35px;
+      width: auto;
+      cursor: pointer;
+    }
+  }
+}

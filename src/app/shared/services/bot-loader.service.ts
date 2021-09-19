@@ -11,13 +11,13 @@ export class BotLoaderService {
 
   getAllBots(): BotInterface[] {
     const bots = botList.map((botItem: BotInterface) => {
+
       return {
         ...botItem,
         id: uuid(),
         favorite: false,
       };
     });
-
     return bots;
   }
 }

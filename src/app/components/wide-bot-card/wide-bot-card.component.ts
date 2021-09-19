@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-wide-bot-card',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WideBotCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() botName: string;
+  @Input() botCreatedDate: string;
+  @Input() botImage: SafeResourceUrl | string;
+  @Input() isFavorite: boolean;
+
+  @Output() toggleFavoriteEvent = new EventEmitter();
+
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    this.botImage = this.sanitizer.bypassSecurityTrustResourceUrl(String(this.botImage));
+  }
+
+  toggleFavorite() {
+    this.toggleFavoriteEvent.emit({
+      isFavorite: this.isFavorite ? false : true,
+    });
   }
 
 }

@@ -1,1 +1,21 @@
-<p>wide-bot-card works!</p>
+<div class="main-container">
+  <div class="star-container" (click)="toggleFavorite()">
+    <ng-container *ngIf="isFavorite; else notFavoriteIconTemplate">
+      <img src="../../../assets/images/star.png" />
+    </ng-container>
+  </div>
+  <div class="card-container">
+    <div class="basic-info-container">
+      <img class="bot-avatar" [src]="botImage">
+      <span class="bot-name">{{botName}}</span>
+    </div>
+
+    <span class="bot-date">{{botCreatedDate | createdAt}}</span>
+  </div>
+</div>
+
+<!--templates-->
+
+<ng-template #notFavoriteIconTemplate >
+  <img src="../../../assets/images/favorite.png" />
+</ng-template>
