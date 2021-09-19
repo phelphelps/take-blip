@@ -1,8 +1,10 @@
 @import '../../../colors.scss';
+
 .main-container {
   display: flex;
   flex-direction: row;
   margin: 24px 0;
+  cursor: pointer;
 
   .star-container {
     cursor: pointer;
@@ -34,6 +36,15 @@
       background-position: center center;
       background-size: cover;
       margin-right: 10px;
+    }
+
+    .bot-created-date {
+      color: $light-blue;
+    }
+
+    .bot-name {
+      font-weight: bold;
+      color: $dark-blue;
     }
   }
 }

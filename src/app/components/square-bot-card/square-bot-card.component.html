@@ -1,5 +1,5 @@
 <div class="main-container">
-  <div class="card-container">
+  <div class="card-container" (click)="itemPressedEvent()">
     <div class="star-container" (click)="toggleFavorite()">
       <ng-container *ngIf="isFavorite; else notFavoriteIconTemplate">
         <img src="../../../assets/images/star.png" />

@@ -13,6 +13,7 @@ export class WideBotCardComponent implements OnInit {
   @Input() botImage: SafeResourceUrl | string;
   @Input() isFavorite: boolean;
 
+  @Output() itemPressed = new EventEmitter();
   @Output() toggleFavoriteEvent = new EventEmitter();
 
   constructor(private sanitizer: DomSanitizer) { }
@@ -25,6 +26,10 @@ export class WideBotCardComponent implements OnInit {
     this.toggleFavoriteEvent.emit({
       isFavorite: this.isFavorite ? false : true,
     });
+  }
+
+  itemPressedEvent() {
+    this.itemPressed.emit();
   }
 
 }

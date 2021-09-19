@@ -12,6 +12,7 @@ export class SquareBotCardComponent implements OnInit {
   @Input() botImage: any;
   @Input() isFavorite: boolean;
 
+  @Output() itemPressed = new EventEmitter();
   @Output() toggleFavoriteEvent = new EventEmitter();
 
   constructor(private sanitizer: DomSanitizer) {}
@@ -26,5 +27,9 @@ export class SquareBotCardComponent implements OnInit {
     this.toggleFavoriteEvent.emit({
       isFavorite: this.isFavorite ? false : true,
     });
+  }
+
+  itemPressedEvent() {
+    this.itemPressed.emit()
   }
 }
