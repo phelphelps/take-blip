@@ -1,7 +1,7 @@
 <div class="main-container">
-  <p>My chatbots</p>
+  <span class="title">My chatbots</span>
   <div class="actions-container">
-    <input class="search-bar" [formControl]="searchForm">
+    <input class="search-bar" placeholder="Search" [formControl]="searchForm">
     <app-flat-button buttonText="Order by name" (buttonPressed)="order(byName)"></app-flat-button>
     <app-flat-button buttonText="Order by creation" (buttonPressed)="order(byCreation)"></app-flat-button>
     <img class="layout-button" src="../../../assets/images/organize-blocks.png" (click)="changeViewMode(blocksView)"/>

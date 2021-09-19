@@ -1,8 +1,11 @@
+@import '../../../colors.scss';
+
 .main-container {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  height: 120px;
 
   .actions-container {
     display: flex;
@@ -10,6 +13,16 @@
 
     .search-bar {
       margin: 0 20px;
+      height: 35px;
+      width: 400px;
+      text-indent: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid rgba($color: $light-blue, $alpha: .4);
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .layout-button {
@@ -17,5 +30,10 @@
       width: auto;
       cursor: pointer;
     }
+  }
+  .title {
+    color: $dark-blue;
+    font-size: 32px;
+    font-weight: bold;
   }
 }
