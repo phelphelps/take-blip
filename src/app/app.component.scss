@@ -1,0 +1,21 @@
+@import "../colors.scss";
+
+.header {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background-color: $primary;
+
+  .logo {
+    height: 20px;
+  }
+}
+
+.main-wrapper {
+  margin: 80px;
+}

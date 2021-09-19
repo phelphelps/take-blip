@@ -6,17 +6,27 @@ import { AppComponent } from './app.component';
 import { WideBotCardComponent } from './components/wide-bot-card/wide-bot-card.component';
 import { SquareBotCardComponent } from './components/square-bot-card/square-bot-card.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ListManagerComponent } from './components/list-manager/list-manager.component';
+import { CreatedAtPipe } from './shared/pipes/created-at.pipe';
+import { FlatButtonComponent } from './components/flat-button/flat-button.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BotDetailsComponent } from './pages/bot-details/bot-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WideBotCardComponent,
     SquareBotCardComponent,
-    HomeComponent
+    HomeComponent,
+    ListManagerComponent,
+    CreatedAtPipe,
+    FlatButtonComponent,
+    BotDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
