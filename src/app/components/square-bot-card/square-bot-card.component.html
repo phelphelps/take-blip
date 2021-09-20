@@ -2,7 +2,7 @@
   <div class="card-container" (click)="itemPressedEvent()">
     <div class="star-container" (click)="toggleFavorite()">
       <ng-container *ngIf="isFavorite; else notFavoriteIconTemplate">
-        <img src="../../../assets/images/star.png" />
+        <img src="assets/images/star.png" />
       </ng-container>
     </div>
     <img class="bot-avatar" [src]="botImage" />
@@ -14,5 +14,5 @@
 <!--templates-->
 
 <ng-template #notFavoriteIconTemplate>
-  <img src="../../../assets/images/favorite.png" />
+  <img src="assets/images/favorite.png" />
 </ng-template>
