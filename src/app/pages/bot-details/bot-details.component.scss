@@ -2,58 +2,51 @@
 
 .main-container {
 
-  .bot-analytics-container {
-    display: flex;
-    flex-direction: row;
-    height: 60%;
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    grid-template-areas: 'region activeUser activeUser plan'
+                          'receivedMessage receivedMessage sentMessage plan';
 
-    .grid-container {
-      display: grid;
-      width: 80%;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 20px;
-      grid-template-areas: 'region activeUser activeUser'
-                            'receivedMessage receivedMessage sentMessage';
+    .active-users-item {
+      grid-area: activeUser;
+    }
 
-      .active-users-item {
-        grid-area: activeUser;
+    .received-messages-item {
+      grid-area: receivedMessage;
+    }
+
+    .sent-messages-item {
+      grid-area: sentMessage;
+    }
+
+    .region-container {
+      grid-area: region;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $surface;
+      border-radius: 8px;
+      box-shadow: 2px 2px 16px rgba($color: $grey, $alpha: 0.4);
+
+      .label {
+        font-weight: bold;
+        margin: 8px 8px 8px 30px;
       }
 
-      .received-messages-item {
-        grid-area: receivedMessage;
-      }
-
-      .sent-messages-item {
-        grid-area: sentMessage;
-      }
-
-      .region-container {
-        grid-area: region;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: $surface;
-        border-radius: 8px;
-        box-shadow: 2px 2px 16px rgba($color: $grey, $alpha: 0.4);
-
-        .label {
-          font-weight: bold;
-          margin: 8px 8px 8px 30px;
-        }
-
-        .description {
-          margin: 8px 8px 8px 30px;
-        }
+      .description {
+        margin: 8px 8px 8px 30px;
       }
     }
 
     .plan-info {
+      grid-area: plan;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 20%;
     }
 
     .plan-status-title {
@@ -80,10 +73,10 @@
   }
 
   .bot-info-container {
-    height: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 20px;
 
     .created-at {
       color: $grey;
